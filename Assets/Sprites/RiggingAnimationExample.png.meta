@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: b2dec760204084aef9a8e7d03c3c4386
+guid: b3a843053cecc1f428680c622a975477
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8710723752907654049
-    second: spr_coin_azu_0
+      213: 1554113671554734103
+    second: RiggingAnimationExample_0
   - first:
-      213: -5065929880676911926
-    second: spr_coin_azu_1
+      213: 8814638232283875250
+    second: RiggingAnimationExample_1
   - first:
-      213: 1930441562187272357
-    second: spr_coin_azu_2
+      213: -576376749050470982
+    second: RiggingAnimationExample_2
   - first:
-      213: 5258327978300046976
-    second: spr_coin_azu_3
+      213: -1881052455442560492
+    second: RiggingAnimationExample_3
+  - first:
+      213: 2260969284620947999
+    second: RiggingAnimationExample_4
+  - first:
+      213: -7458572805637549557
+    second: RiggingAnimationExample_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -67,8 +73,6 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 1
-  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -99,89 +103,155 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_coin_azu_0
+      name: RiggingAnimationExample_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 10
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 407
+        y: 622
+        width: 158
+        height: 155
+      alignment: 9
+      pivot: {x: 0.5164781, y: 0.0128725115}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a34e941a15b2e870800000000000000
-      internalID: 8710723752907654049
+      spriteID: 71819957622519510800000000000000
+      internalID: 1554113671554734103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_coin_azu_1
+      name: RiggingAnimationExample_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 0
-        width: 10
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 57
+        y: 532
+        width: 294
+        height: 69
+      alignment: 9
+      pivot: {x: 0.96935827, y: 0.575466}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac4373d2d9332b9b0800000000000000
-      internalID: -5065929880676911926
+      spriteID: 2b78bd235c2e35a70800000000000000
+      internalID: 8814638232283875250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_coin_azu_2
+      name: RiggingAnimationExample_2
       rect:
         serializedVersion: 2
-        x: 35
-        y: 0
-        width: 10
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 655
+        y: 528
+        width: 271
+        height: 90
+      alignment: 9
+      pivot: {x: 0.08207697, y: 0.51446396}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a092d57f5e4aca10800000000000000
-      internalID: 1930441562187272357
+      spriteID: abd5d08866c4008f0800000000000000
+      internalID: -576376749050470982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_coin_azu_3
+      name: RiggingAnimationExample_3
       rect:
         serializedVersion: 2
-        x: 51
-        y: 0
-        width: 10
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 257
+        y: 76
+        width: 94
+        height: 236
+      alignment: 9
+      pivot: {x: 0.51384884, y: 0.96335423}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08e721bbf6559f840800000000000000
-      internalID: 5258327978300046976
+      spriteID: 41a487d02c825e5e0800000000000000
+      internalID: -1881052455442560492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RiggingAnimationExample_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 277
+        width: 178
+        height: 246
+      alignment: 9
+      pivot: {x: 0.52194005, y: 0.17190267}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1296e1d593906f10800000000000000
+      internalID: 2260969284620947999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RiggingAnimationExample_5
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 87
+        width: 105
+        height: 240
+      alignment: 9
+      pivot: {x: 0.26443452, y: 0.9339349}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02d59cec83dd7890800000000000000
+      internalID: -7458572805637549557
       vertices: []
       indices: 
       edges: []
