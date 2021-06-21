@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DialogueEditor;
 
 public class UI : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class UI : MonoBehaviour
 
 	if(PlayerData.score == 1000)
 	{
+		ConversationManager.OnConversationEnded += leave;
+
 	    Instructions2.SetActive(true);
 	    coroutine = TurnOff(Instructions2);
 	    StartCoroutine(coroutine);
