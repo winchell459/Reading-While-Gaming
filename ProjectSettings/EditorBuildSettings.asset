@@ -6,15 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: d1ca76df02a1548d99f9b43015bda317
+    path: Assets/Scenes/Overworld.unity
+    guid: ca646f3152d6045e882314d8845daba0
   - enabled: 1
-    path: Assets/Scenes/OutsideHouse.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/InsideHouse.unity
-    guid: 74f60d669d2ad46c4af0963e8a209ef8
-  - enabled: 1
-    path: Assets/Scenes/EndGame.unity
-    guid: 0e50afcf80e4e404ca6bde2ddc74a948
+    path: Assets/Scenes/BattleSetUp.unity
+    guid: bab028db8113d409587a3349e7c43320
   m_configObjects: {}
