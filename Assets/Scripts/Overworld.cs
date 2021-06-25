@@ -7,6 +7,7 @@ public class Overworld : MonoBehaviour
 {
     public string BattleSceneName = "BattleSetUp";
     public Transform Player;
+    public CameraController Camera;
     public Vector2 StartPoint;
 
     void Start()
@@ -22,6 +23,7 @@ public class Overworld : MonoBehaviour
         if(LastSpawnDefeat == -1)
         {
             Player.transform.position = StartPoint;
+            
         }
         else
         {
@@ -35,6 +37,7 @@ public class Overworld : MonoBehaviour
                 }
             }
         }
+        Camera.SetCameraPos(Player.transform.position);
     }
 
     public void PlayerAttacked(Enemy.Types AttackType, int SpawnPointID)

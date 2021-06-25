@@ -12,35 +12,39 @@ public class CharaScript : MonoBehaviour
 
     public Animator animator;
     Vector2 move;
-    public int score;
-    public int outside;
+
+    public bool PlayerMove;
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-	score = 0;
-	outside = 1;
-
-	if(SceneManager.GetActiveScene().buildIndex == outside)
-	{
-	    this.transform.position = PlayerData.pos;
-	}
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-	vertical = Input.GetAxisRaw("Vertical");
-
-	body.velocity = new Vector2(horizontal * speed, vertical * speed);
-
-	animator.SetFloat("Horizontal", horizontal);
-	animator.SetFloat("Vertical", vertical);
-
-	move.x = horizontal;
-	move.y = vertical;
-	animator.SetFloat("Speed", move.sqrMagnitude);
+        if (PlayerMove) Move();
+        else
+        {
+            body.velocity = Vector2.zero;
+            animator.SetFloat("Speed", 0);
+        }
     }
+
+    private void Move()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+
+        body.velocity = new Vector2(horizontal * speed, vertical * speed);
+
+        animator.SetFloat("Horizontal", horizontal);
+        animator.SetFloat("Vertical", vertical);
+
+        move.x = horizontal;
+        move.y = vertical;
+        animator.SetFloat("Speed", move.sqrMagnitude);
+    }
+
 }
