@@ -12,20 +12,13 @@ public class BattleWindow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetQuestion(DebugQuestion);
+        
     }
 
     public void AnswerButton(int buttonIndex)
     {
-        if(buttonIndex == CurrentQuestion.CorrectAnswer)
-        {
-            Debug.Log("AnswerButton pressed: is correct");
-        }
-        else
-        {
-            Debug.Log("AnswerButton pressed: is incorrect");
-        }
-        
+        FindObjectOfType<BattleHandler>().QuestionAnswered(buttonIndex);
+        BattleWindowVisible(false);
     }
 
     private void BattleWindowVisible(bool isVisible)

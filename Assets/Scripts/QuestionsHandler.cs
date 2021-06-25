@@ -6,13 +6,24 @@ using UnityEngine;
 public class QuestionsHandler : ScriptableObject
 {
     public Question[] Questions;
-    private List<Question> CorrectQuestions = new List<Question>();
-    private List<Question> IncorrectQuestions = new List<Question>();
+    [SerializeField] private List<Question> CorrectQuestions = new List<Question>();
+    [SerializeField] private List<Question> IncorrectQuestions = new List<Question>();
 
     public Question GetRandomQuestion()
     {
-        int index = Random.Range(0, Questions.Length - 1);
-        return Questions[index];
+        List<Question> unAnsweredQuestions = GetUnansweredQuestions();
+        int index = Random.Range(0, unAnsweredQuestions.Count);
+        return unAnsweredQuestions[index];
+    }
+
+    private List<Question> GetUnansweredQuestions()
+    {
+        List<Question> questions = new List<Question>();
+        foreach(Question question in Questions)
+        {
+            if (!CorrectQuestions.Contains(question)) questions.Add(question);
+        }
+        return questions;
     }
 
     public void AnswerCorrect(Question question)
@@ -20,12 +31,17 @@ public class QuestionsHandler : ScriptableObject
         if (!CorrectQuestions.Contains(question))
         {
             CorrectQuestions.Add(question);
-            if (IncorrectQuestions.Contains(question)) IncorrectQuestions.Remove(question);
         }
+        if (IncorrectQuestions.Contains(question)) IncorrectQuestions.Remove(question);
     }
 
     public void AnswerIncorrect(Question question)
     {
         if (!IncorrectQuestions.Contains(question)) IncorrectQuestions.Add(question);
+    }
+
+    public void ClearCorrectQuestions()
+    {
+        CorrectQuestions.Clear();
     }
 }
