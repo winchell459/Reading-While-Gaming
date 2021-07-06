@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleHandler : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class BattleHandler : MonoBehaviour
     [SerializeField] private Enemy Enemy;
 
     public EnemyHandler EnemyHandler;
+    public Image Background;
 
     public enum BattleStates
     {
@@ -33,6 +35,7 @@ public class BattleHandler : MonoBehaviour
     {
         PlayerHandler player = FindObjectOfType<PlayerHandler>();
         Enemy = EnemyHandler.GetRandomEnemy(player.AttackedType);
+        Background.sprite = Enemy.Background;
     }
 
     void Update()

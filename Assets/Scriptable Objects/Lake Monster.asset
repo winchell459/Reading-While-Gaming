@@ -16,4 +16,5 @@ MonoBehaviour:
   HP: 250
   EnemyPrefab: {fileID: 0}
   Color: {r: 0.27634388, g: 0.43068165, b: 0.8490566, a: 1}
+  Background: {fileID: 21300000, guid: 875b1b6f4ea6cb14185d59871ba20d57, type: 3}
   EnemyType: 3

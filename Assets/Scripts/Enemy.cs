@@ -9,6 +9,7 @@ public class Enemy : ScriptableObject
     public int HP;
     public GameObject EnemyPrefab;
     public Color Color;
+    public Sprite Background;
 
     public enum Types
     {
