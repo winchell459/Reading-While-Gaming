@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f31bf9f8a8e9d4f44aacd990388d430c, type: 3}
+  m_Name: Question 40
+  m_EditorClassIdentifier: 
+  QuestionStr: Why did Wilbur wait before taking action when the Green Army gathered
+    at the northern border?
+  Answer1: Technoblade told him to wait
+  Answer2: He didn't know what is their intention
+  Answer3: He was scared
+  CorrectAnswer: 2
+  Difficulty: 3
+  Theme: 3

@@ -18,6 +18,8 @@ public class BattleHandler : MonoBehaviour
     public SpriteRenderer Background;
     public Transform EnemySpawnPoint;
 
+    private bool battleWon;
+
     public enum BattleStates
     {
         Start,
@@ -93,6 +95,7 @@ public class BattleHandler : MonoBehaviour
                         if(PlayerHPBar.GetHP() > 0)
                         {
                             Player.EnemyDefeated(Player.CurrentEnemyID);
+                            battleWon = true;
                         }
                         BattleState += 1;
                     }
@@ -100,7 +103,14 @@ public class BattleHandler : MonoBehaviour
                 break;
 
             case BattleStates.Ending:
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Overworld");
+                if(Enemy.EnemyType == Enemy.Types.Chest && battleWon == true)
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+                }
+                else
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Overworld");
+                }
                 break;
 
             default:

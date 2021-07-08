@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31bf9f8a8e9d4f44aacd990388d430c, type: 3}
   m_Name: Question 36
   m_EditorClassIdentifier: 
-  QuestionStr: 
-  Answer1: 
-  Answer2: 
-  Answer3: 
-  CorrectAnswer: 0
-  Difficulty: 0
+  QuestionStr: In which chapter was Wilbur crowned king?
+  Answer1: In chapter 1
+  Answer2: In chapter 2
+  Answer3: In chapter 3
+  CorrectAnswer: 2
+  Difficulty: 8
   Theme: 0
