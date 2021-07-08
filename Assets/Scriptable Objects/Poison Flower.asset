@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 'Poison Flower:'
   HP: 200
-  EnemyPrefab: {fileID: 0}
+  EnemyPrefab: {fileID: 5811809136298396139, guid: ff8f5070cc3c243fb9d4f4d6de7b0a33, type: 3}
+  EnemyBackground: {fileID: 21300000, guid: a74ead1cd32494c519866520e0ed304f, type: 3}
   Color: {r: 0.36901644, g: 0.754717, b: 0.10323961, a: 1}
   EnemyType: 0

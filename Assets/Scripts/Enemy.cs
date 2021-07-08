@@ -8,6 +8,7 @@ public class Enemy : ScriptableObject
     public string Name;
     public int HP;
     public GameObject EnemyPrefab;
+    public Sprite EnemyBackground;
     public Color Color;
 
     public enum Types
@@ -16,6 +17,7 @@ public class Enemy : ScriptableObject
         Bandit,
         Someguy,
         Lakemonster,
+
     }
 
     public Types EnemyType;

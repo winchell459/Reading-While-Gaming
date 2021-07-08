@@ -13,13 +13,14 @@ public class CharaScript : MonoBehaviour
 
     public Animator animator;
     Vector2 move;
+    public Controls Controls;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(PlayerMove) Move();
         else
@@ -31,8 +32,8 @@ public class CharaScript : MonoBehaviour
 
     private void Move()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-	    vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Controls.horizontal;
+	    vertical = Controls.vertical;
 
 	    body.velocity = new Vector2(horizontal * speed, vertical * speed);
 

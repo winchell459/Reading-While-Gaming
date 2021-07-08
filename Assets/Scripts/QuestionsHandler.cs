@@ -12,8 +12,19 @@ public class QuestionsHandler : ScriptableObject
     public Question GetRandomQuestion()
     {
         List<Question> unAnsweredQuestions = GetUnansweredQuestions();
-        int index = Random.Range(0, unAnsweredQuestions.Count);
-        return unAnsweredQuestions[index];
+
+        if(unAnsweredQuestions.Count > 0)
+        {
+            int index = Random.Range(0, unAnsweredQuestions.Count);
+            return unAnsweredQuestions[index];
+        }
+
+        else
+        {
+            int index = Random.Range(0, Questions.Length);
+            Debug.Log("Unanswered Question not found");
+            return Questions[index];
+        }
     }
 
     private List<Question> GetUnansweredQuestions()
@@ -34,7 +45,7 @@ public class QuestionsHandler : ScriptableObject
         else
         {
             Debug.Log("No question found of theme " + type);
-            return null;
+            return GetRandomQuestion();
         }
     }
 

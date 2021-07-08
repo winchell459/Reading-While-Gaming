@@ -15,6 +15,9 @@ public class BattleHandler : MonoBehaviour
 
     public EnemyHandler EnemyHandler;
 
+    public SpriteRenderer Background;
+    public Transform EnemySpawnPoint;
+
     public enum BattleStates
     {
         Start,
@@ -31,8 +34,10 @@ public class BattleHandler : MonoBehaviour
 
     void Start()
     {
-        PlayerHandler player = FindObjectOfType<PlayerHandler>();
-        Enemy = EnemyHandler.GetRandomEnemy(player.AttackedType);
+        Player = FindObjectOfType<PlayerHandler>();
+        Enemy = EnemyHandler.GetRandomEnemy(Player.AttackedType);
+        Background.sprite = Enemy.EnemyBackground;
+        Instantiate(Enemy.EnemyPrefab, EnemySpawnPoint);
     }
 
     void Update()
@@ -87,8 +92,7 @@ public class BattleHandler : MonoBehaviour
                     {
                         if(PlayerHPBar.GetHP() > 0)
                         {
-                            PlayerHandler player = FindObjectOfType<PlayerHandler>();
-                            player.EnemyDefeated(player.CurrentEnemyID);
+                            Player.EnemyDefeated(Player.CurrentEnemyID);
                         }
                         BattleState += 1;
                     }
