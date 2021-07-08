@@ -17,7 +17,7 @@ public class Enemy : ScriptableObject
         Bandit,
         Someguy,
         Lakemonster,
-
+        Chest,
     }
 
     public Types EnemyType;

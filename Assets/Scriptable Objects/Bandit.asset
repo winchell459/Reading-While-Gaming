@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Bandit
   m_EditorClassIdentifier: 
   Name: 'Bandit:'
-  HP: 200
-  EnemyPrefab: {fileID: 6013128074069208733, guid: 1b39f253264da498192f4cd8428cf305, type: 3}
+  HP: 250
+  EnemyPrefab: {fileID: 8582197693249314766, guid: 1b39f253264da498192f4cd8428cf305, type: 3}
   EnemyBackground: {fileID: 21300000, guid: b8684c0a71b8f4dc0af5d458417253b5, type: 3}
   Color: {r: 0.05700427, g: 0.5702335, b: 0.5754717, a: 1}
   EnemyType: 1
