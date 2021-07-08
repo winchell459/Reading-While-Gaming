@@ -17,7 +17,8 @@ public class Overworld : MonoBehaviour
 
     private void LoadOverworld()
     {
-        PlayerHandler player = FindObjectOfType<PlayerHandler>();
+        PlayerHandler player = PlayerHandler.Singleton;
+        if(!player) player = FindObjectOfType<PlayerHandler>();
         int LastSpawnDefeat = player.LastEnemyDefeated();
 
         if(LastSpawnDefeat == -1)

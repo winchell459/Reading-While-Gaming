@@ -9,7 +9,7 @@ public class Enemy : ScriptableObject
     public int HP;
     public GameObject EnemyPrefab;
     public Sprite EnemyBackground;
-    public Color Color;
+    public Color Color = Color.white;
 
     public enum Types
     {

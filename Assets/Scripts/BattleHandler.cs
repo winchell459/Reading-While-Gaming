@@ -18,6 +18,7 @@ public class BattleHandler : MonoBehaviour
     public SpriteRenderer Background;
     public Transform EnemySpawnPoint;
 
+    private bool battleWon;
     public enum BattleStates
     {
         Start,
@@ -47,7 +48,7 @@ public class BattleHandler : MonoBehaviour
 
     private void HandleBattleStates()
     {
-        switch(BattleState)
+        switch (BattleState)
         {
             case BattleStates.Start:
                 StartBattle();
@@ -62,9 +63,9 @@ public class BattleHandler : MonoBehaviour
                 break;
 
             case BattleStates.Answering:
-                if(AnswerSubmitted)
+                if (AnswerSubmitted)
                 {
-                    if(questionAnswer == CurrentQuestion.CorrectAnswer)
+                    if (questionAnswer == CurrentQuestion.CorrectAnswer)
                     {
                         Attack();
                         Questions.AnswerCorrect(CurrentQuestion);
@@ -82,7 +83,7 @@ public class BattleHandler : MonoBehaviour
                 break;
 
             case BattleStates.Actions:
-                if(!PlayerHPBar.isDraining && !EnemyHPBar.isDraining)
+                if (!PlayerHPBar.isDraining && !EnemyHPBar.isDraining)
                 {
                     if (PlayerHPBar.GetHP() > 0 && EnemyHPBar.GetHP() > 0)
                     {
@@ -90,9 +91,10 @@ public class BattleHandler : MonoBehaviour
                     }
                     else
                     {
-                        if(PlayerHPBar.GetHP() > 0)
+                        if (PlayerHPBar.GetHP() > 0)
                         {
                             Player.EnemyDefeated(Player.CurrentEnemyID);
+                            battleWon = true;
                         }
                         BattleState += 1;
                     }
@@ -100,7 +102,14 @@ public class BattleHandler : MonoBehaviour
                 break;
 
             case BattleStates.Ending:
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Overworld");
+                if (Enemy.EnemyType == Enemy.Types.Chest && battleWon == true)
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+                }
+                else {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Overworld");
+                }
+        
                 break;
 
             default:
