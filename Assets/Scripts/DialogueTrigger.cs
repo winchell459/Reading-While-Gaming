@@ -24,7 +24,6 @@ public class DialogueTrigger : MonoBehaviour
         {
             DialogueWindow.gameObject.SetActive(false);
             FindObjectOfType<CharaScript>().PlayerMove = true;
-
         }
     }
 
