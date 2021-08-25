@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private int DialogueIndex = 0;
     public bool PausePlayer;
+    public int DialogueID;
 
     private void DisplayDialogue()
     {
@@ -25,12 +26,13 @@ public class DialogueTrigger : MonoBehaviour
         {
             DialogueWindow.gameObject.SetActive(false);
             FindObjectOfType<CharaScript>().PlayerMove = true;
+            PlayerHandler.Singleton.SetDialogueCompleted(DialogueID);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.CompareTag("Player"))
+        if(collision.transform.CompareTag("Player") && PlayerHandler.Singleton.IsDialogueCompleted(DialogueID))
         {
             GetComponent<Collider2D>().enabled = false;
             DisplayDialogue();

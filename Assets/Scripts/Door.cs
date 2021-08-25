@@ -5,10 +5,10 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     private Transform PlayerTransform;
-    public Transform TeleportGoal = new Vector3(transform.position.160.9, transform.position.160.9);
+    //public Transform TeleportGoal = new Vector3(transform.position.160.9, transform.position.160.9);
 
     void OnTriggerEnter()
     {
-        PlayerTransform.position = TeleportGoal.position;
+        //PlayerTransform.position = TeleportGoal.position;
     }
 }

@@ -14,6 +14,7 @@ public class PlayerHandler : MonoBehaviour
     public int CurrentEnemyID;
 
     public List<int> EnemySpawnDefeated = new List<int>();
+    List<int> DialogueCompleted = new List<int>();
 
     public QuestionsHandler QH;
 
@@ -45,5 +46,14 @@ public class PlayerHandler : MonoBehaviour
     {
         if (EnemySpawnDefeated.Count > 0) return EnemySpawnDefeated[EnemySpawnDefeated.Count - 1];
         else return -1;
+    }
+
+    public void SetDialogueCompleted(int dialogueID)
+    {
+        DialogueCompleted.Add(dialogueID);
+    }
+    public bool IsDialogueCompleted(int dialogueID)
+    {
+        return !DialogueCompleted.Contains(dialogueID);
     }
 }
