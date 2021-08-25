@@ -12,6 +12,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void DisplayDialogue()
     {
+        DialogueWindow.gameObject.SetActive(true);
         FindObjectOfType<CharaScript>().PlayerMove = !PausePlayer;
         if(DialogueIndex < dialogues.Length)
         {
