@@ -20,9 +20,13 @@ public class BattleHandler : MonoBehaviour
 
     private bool battleWon;
 
+    public float QuestionWaitTime = 1;
+    float questionWaitStart = float.MinValue;
+
     public enum BattleStates
     {
         Start,
+        QuestionStart,
         Questioning,
         Answering,
         Actions,
@@ -49,13 +53,18 @@ public class BattleHandler : MonoBehaviour
 
     private void HandleBattleStates()
     {
-        switch(BattleState)
+        switch (BattleState)
         {
             case BattleStates.Start:
                 StartBattle();
                 BattleState += 1;
                 break;
-
+            case BattleStates.QuestionStart:
+                if (questionWaitStart + QuestionWaitTime < Time.time)
+                {
+                    BattleState += 1;
+                }
+                break;
             case BattleStates.Questioning:
                 CurrentQuestion = Questions.GetRandomQuestion();
                 BattleWindow.SetQuestion(CurrentQuestion);
@@ -64,9 +73,9 @@ public class BattleHandler : MonoBehaviour
                 break;
 
             case BattleStates.Answering:
-                if(AnswerSubmitted)
+                if (AnswerSubmitted)
                 {
-                    if(questionAnswer == CurrentQuestion.CorrectAnswer)
+                    if (questionAnswer == CurrentQuestion.CorrectAnswer)
                     {
                         Attack();
                         Questions.AnswerCorrect(CurrentQuestion);
@@ -84,15 +93,16 @@ public class BattleHandler : MonoBehaviour
                 break;
 
             case BattleStates.Actions:
-                if(!PlayerHPBar.isDraining && !EnemyHPBar.isDraining)
+                if (!PlayerHPBar.isDraining && !EnemyHPBar.isDraining)
                 {
                     if (PlayerHPBar.GetHP() > 0 && EnemyHPBar.GetHP() > 0)
                     {
-                        BattleState = BattleStates.Questioning;
+                        questionWaitStart = Time.time;
+                        BattleState = BattleStates.QuestionStart;
                     }
                     else
                     {
-                        if(PlayerHPBar.GetHP() > 0)
+                        if (PlayerHPBar.GetHP() > 0)
                         {
                             Player.EnemyDefeated(Player.CurrentEnemyID);
                             battleWon = true;
@@ -103,7 +113,7 @@ public class BattleHandler : MonoBehaviour
                 break;
 
             case BattleStates.Ending:
-                if(Enemy.EnemyType == Enemy.Types.Chest && battleWon == true)
+                if (Enemy.EnemyType == Enemy.Types.Chest && battleWon == true)
                 {
                     UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
                 }
@@ -132,6 +142,7 @@ public class BattleHandler : MonoBehaviour
 
     private void StartBattle()
     {
+        questionWaitStart = Time.time;
         PlayerHPBar.SetUpHealthBar("Player:", Player.MaxHP, Player.Color);
         PlayerHPBar.SetHP(Player.HP);
         EnemyHPBar.SetUpHealthBar(Enemy.Name, Enemy.HP, Enemy.Color);

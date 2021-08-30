@@ -20,17 +20,17 @@ public class Overworld : MonoBehaviour
         PlayerHandler player = PlayerHandler.Singleton;
         if (!player) player = FindObjectOfType<PlayerHandler>();
         int LastSpawnDefeat = player.LastEnemyDefeated();
-        
-        if(LastSpawnDefeat == -1)
+
+        if (LastSpawnDefeat == -1)
         {
             Player.transform.position = StartPoint;
         }
         else
         {
             Spawn[] sp = FindObjectsOfType<Spawn>();
-            foreach(Spawn point in sp)
+            foreach (Spawn point in sp)
             {
-                if(player.isEnemySpawnDefeated(point.SpawnPointID))
+                if (player.isEnemySpawnDefeated(point.SpawnPointID))
                 {
                     if (point.SpawnPointID == LastSpawnDefeat) Player.transform.position = (Vector2)point.transform.position;
                     point.gameObject.SetActive(false);
