@@ -9,6 +9,7 @@ public class Overworld : MonoBehaviour
     public Transform Player;
     public CameraController Camera;
     public Vector2 StartPoint;
+    public DialogueWindow dialogueWindow;
 
     void Start()
     {
@@ -20,8 +21,9 @@ public class Overworld : MonoBehaviour
         PlayerHandler player = PlayerHandler.Singleton;
         if (!player) player = FindObjectOfType<PlayerHandler>();
         int LastSpawnDefeat = player.LastEnemyDefeated();
-        
-        if(LastSpawnDefeat == -1)
+        if (!dialogueWindow) dialogueWindow = FindObjectOfType<DialogueWindow>();
+
+        if (LastSpawnDefeat == -1)
         {
             Player.transform.position = StartPoint;
         }
@@ -36,6 +38,7 @@ public class Overworld : MonoBehaviour
                     point.gameObject.SetActive(false);
                 }
             }
+            dialogueWindow.gameObject.SetActive(false);
         }
         Camera.SetCameraPos(Player.transform.position);
     }
