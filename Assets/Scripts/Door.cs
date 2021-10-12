@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    private Transform PlayerTransform;
-    //public Transform TeleportGoal = new Vector3(transform.position.160.9, transform.position.160.9);
-
-    void OnTriggerEnter()
+    public Transform TeleportLocation;
+    private void Start()
     {
-        //PlayerTransform.position = TeleportGoal.position;
+        Debug.Log($"Door scripts is on {gameObject.name}");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.transform.position = TeleportLocation.position;
+        }
     }
 }
