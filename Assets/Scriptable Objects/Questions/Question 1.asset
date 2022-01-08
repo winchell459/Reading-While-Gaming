@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31bf9f8a8e9d4f44aacd990388d430c, type: 3}
   m_Name: Question 1
   m_EditorClassIdentifier: 
-  QuestionStr: What are Tommy's favorite flowers called?
-  Answer1: Dawn Flourish
-  Answer2: Sunset Golds
-  Answer3: Morning Glories
+  QuestionStr: What does page 1 say?
+  Answer1: Nothing
+  Answer2: Hi
+  Answer3: Hello
   CorrectAnswer: 3
-  Difficulty: 2
-  Theme: 1
+  Difficulty: 1

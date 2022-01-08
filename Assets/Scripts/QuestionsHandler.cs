@@ -37,27 +37,27 @@ public class QuestionsHandler : ScriptableObject
         return questions;
     }
 
-    public Question GetRandomQuestion(Question.Themes type)
-    {
-        List<Question> questions = GetQuestions(type);
-        int index = Random.Range(0, questions.Count);
-        if (questions.Count > 0) return questions[index];
-        else
-        {
-            Debug.Log("No question found of theme " + type);
-            return GetRandomQuestion();
-        }
-    }
+    //public Question GetRandomQuestion(Question.Themes type)
+    //{
+    //    List<Question> questions = GetQuestions(type);
+    //    int index = Random.Range(0, questions.Count);
+    //    if (questions.Count > 0) return questions[index];
+    //    else
+    //    {
+    //        Debug.Log("No question found of theme " + type);
+    //        return GetRandomQuestion();
+    //    }
+    //}
 
-    public List<Question> GetQuestions(Question.Themes type)
-    {
-        List<Question> questions = new List<Question>();
-        foreach (Question question in Questions)
-        {
-            if (question.Theme == type) questions.Add(question);
-        }
-        return questions;
-    }
+    //public List<Question> GetQuestions(Question.Themes type)
+    //{
+    //    List<Question> questions = new List<Question>();
+    //    foreach (Question question in Questions)
+    //    {
+    //        if (question.Theme == type) questions.Add(question);
+    //    }
+    //    return questions;
+    //}
 
     public void AnswerCorrect(Question question)
     {
